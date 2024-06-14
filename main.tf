@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "your-aws-region"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "example" {
@@ -14,6 +14,6 @@ terraform {
   backend "s3" {
     bucket = "your-bucket-name"
     key    = "terraform.tfstate"
-    region = "your-aws-region"
+    region = "us-east-1"
   }
 }
