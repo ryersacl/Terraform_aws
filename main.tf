@@ -1,19 +1,11 @@
 provider "aws" {
-  region = "us-east-1"
+    region = "us-east-1"  
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-04b70fa74e45c3917"
+resource "aws_instance" "foo" {
+  ami           = "ami-05fa00d4c63e32376" # us-west-2
   instance_type = "t2.micro"
   tags = {
-    Name = "ExampleInstance"
-  }
-}
-
-terraform {
-  backend "s3" {
-    bucket = "my-bucket-jenkins-terraform-aws"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
+      Name = "TF-Instance"
   }
 }
